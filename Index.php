@@ -3,13 +3,16 @@
 require_once __DIR__ . '/models/Product.php';
 require_once __DIR__ . '/models/Toys.php';
 require_once __DIR__ . '/models/Food.php';
+require_once __DIR__ . '/Models/User.php';
+require_once __DIR__ . '/Traits/Picturable.php';
 
+use Picturable;
 $dog= new Category('Cane','fa-solid fa-dog');
 $cat= new Category('Gatto','fa-solid fa-cat');
 
 
 
-$collare = new Product('Collare', 15, $dog, 'https://picsum.photos/200/300');
+$collare = new Product('Collare', 15, $dog, ('https://picsum.photos/200/300'));
 $croccantini = new Food('Croccantini', 15, $cat,'https://picsum.photos/200/300','Salmone','Gourmet');
 $pallaDiGomma = new Toys('Pallina di Gomma', 5, $dog,'https://picsum.photos/200/300', 'Gomma');
 
@@ -41,7 +44,7 @@ $list = [
         <div class="card" style="width: 18rem;">
         <img src="<?php echo $product->image; ?>" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title"><?php echo $product->name; ?></h5>
+            <h5 class="card-title"><?php echo $product->setPictureUrl('https://picsum.photos/200/300'); ?></h5>
             <i class="<?php echo $product->category->icon; ?>"></i>
             <div> Prezzo: <?php echo $product->price; ?>$</div>
             <div><?php echo get_class($product) ?></div>

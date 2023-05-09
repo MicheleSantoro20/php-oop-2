@@ -1,10 +1,12 @@
 <?php
 
+require_once __DIR__ . '/../Traits/Picturable.php';
 require_once __DIR__ . '/Category.php';
 
 class Product {
 
-
+    use Picturable;
+    
     public $name;
     public $description;
     public $price;
