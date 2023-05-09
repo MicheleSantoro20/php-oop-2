@@ -6,7 +6,6 @@ require_once __DIR__ . '/models/Food.php';
 require_once __DIR__ . '/Models/User.php';
 require_once __DIR__ . '/Traits/Picturable.php';
 
-use Picturable;
 $dog= new Category('Cane','fa-solid fa-dog');
 $cat= new Category('Gatto','fa-solid fa-cat');
 
